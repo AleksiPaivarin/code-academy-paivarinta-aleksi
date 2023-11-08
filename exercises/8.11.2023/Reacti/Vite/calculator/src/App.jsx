@@ -4,18 +4,35 @@ import React from 'react'
 
   
 function Calculate() {
-let myarray = React.useState(5); 
-let result = myarray[0];
-let setResult = myarray[1];
+let myarray = React.useState(); 
+let result = myarray[1];
+let setResult = myarray[2];
   
-  // ES6 style function, you can also use traditional approach
-  const click = () => {
-    setResult(Math.random())
-  };
-
   return (
     <div>
-      <button onClick={click}>Calculate</button>
+      <input type="number" name="number1" onChange={
+function Calculate() {
+  let [n1, setN1] = React.useState(0);
+  let [n2, setN2] = React.useState(0);
+
+  return (
+    <>
+      <h1>Calculator</h1>
+      {n1 + n2}
+      <br />
+      <input
+        type="number"
+        name="number2"
+        onChange={(e) => setN1(Number(e.target.value))}
+      />
+      <input
+        type="number"
+        name="number2"
+        onChange={(e) => setN2(Number(e.target.value))}
+      />
+    </>
+  );
+}} />
       <p>Result = {result}</p>
     </div>
   );
